@@ -2,6 +2,1232 @@
 <html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hospital Management | Maria Montessori Teacher Training</title>
+
+    <meta name="description"
+          content="Hospital Management and Paramedical Courses including Medical Laboratory Technology, Operation Theatre Technology, Radiology & Imaging Technology and Patient Care.">
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1.7;
+    background: #fff;
+}
+
+:root {
+    --primary: #bd4d88;
+    --primary-dark: #963967;
+    --dark: #34242c;
+    --gold: #d19b42;
+    --light: #f8f8fa;
+    --text: #60656d;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,.08);
+    position: relative;
+    z-index: 1000;
+}
+
+.nav.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__data {
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.nav__menu {
+    display: flex;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 29px 13px;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav__link:hover {
+    color: var(--primary);
+}
+
+.dropdown__arrow {
+    font-size: 16px;
+}
+
+.dropdown__item {
+    position: relative;
+}
+
+.dropdown__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    background: #fff;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: .3s;
+    z-index: 999;
+}
+
+.dropdown__item:hover .dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 18px;
+    color: #333;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.dropdown__link:hover {
+    color: #fff;
+    background: var(--primary);
+}
+
+.dropdown__link i {
+    font-size: 17px;
+}
+
+.nav__toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav__close {
+    display: none;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(35,35,45,.95),
+            rgba(35,35,45,.80),
+            rgba(35,35,45,.25)
+        ),
+        url("../../assets/images/HOSPITAL-MANAGEMENT.png");
+
+    background-size: cover;
+    background-position: center;
+
+    color: #fff;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero-label {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+
+    font-size: clamp(45px, 6vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    max-width: 850px;
+}
+
+.hero h1 span {
+    color: #e7a4c5;
+}
+
+.hero p {
+
+    max-width: 750px;
+
+    font-size: 18px;
+
+    color: #eee;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn-main {
+
+    padding: 13px 28px;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.btn-main:hover {
+
+    background: var(--primary-dark);
+
+    color: #fff;
+
+    transform: translateY(-3px);
+}
+
+.btn-light {
+
+    padding: 13px 28px;
+
+    background: #fff;
+
+    color: var(--dark);
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.btn-light:hover {
+
+    color: var(--dark);
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   QUICK CARDS
+===================================================== */
+
+.quick-section {
+
+    margin-top: -45px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.quick-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,.12);
+}
+
+.quick-card {
+
+    text-align: center;
+
+    padding: 27px 15px;
+
+    border-right: 1px solid #eee;
+}
+
+.quick-card:last-child {
+    border-right: 0;
+}
+
+.quick-card i {
+
+    font-size: 32px;
+
+    color: var(--primary);
+
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+.quick-card h3 {
+
+    font-size: 17px;
+
+    color: var(--dark);
+
+    margin-bottom: 3px;
+}
+
+.quick-card p {
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   GENERAL SECTION
+===================================================== */
+
+.section {
+
+    padding: 90px 0;
+}
+
+.section-light {
+    background: var(--light);
+}
+
+.section-heading {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: 0 auto 50px;
+}
+
+.section-heading small {
+
+    color: var(--primary);
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+
+    color: var(--dark);
+
+    font-size: 38px;
+
+    margin: 8px 0 12px;
+
+    font-weight: 700;
+}
+
+.section-heading p {
+
+    color: var(--text);
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   ABOUT HOSPITAL MANAGEMENT
+===================================================== */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 55px;
+
+    align-items: center;
+}
+
+.about-image {
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 45px rgba(0,0,0,.15);
+}
+
+.about-image img {
+
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.about-content h2 {
+
+    font-size: 38px;
+
+    color: var(--dark);
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+}
+
+.about-content h2 span {
+
+    color: var(--primary);
+}
+
+.about-content p {
+
+    color: var(--text);
+
+    margin-bottom: 15px;
+}
+
+.check-list {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin-top: 20px;
+}
+
+.check-list li {
+
+    margin: 11px 0;
+
+    color: var(--dark);
+
+    font-weight: 600;
+}
+
+.check-list li::before {
+
+    content: "✓";
+
+    width: 25px;
+
+    height: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f5dce8;
+
+    color: var(--primary);
+
+    border-radius: 50%;
+
+    margin-right: 10px;
+}
+
+
+/* =====================================================
+   PARAMEDICAL COURSES
+===================================================== */
+
+.course-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.course-card {
+
+    background: #fff;
+
+    border: 1px solid #e5e5ea;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .35s;
+}
+
+.course-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 18px 40px rgba(0,0,0,.10);
+
+    border-color: #d99abc;
+}
+
+.course-number {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 5px;
+
+    font-size: 48px;
+
+    font-weight: 900;
+
+    color: #f5e3eb;
+}
+
+.course-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 16px;
+
+    background: #f8e2ed;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.course-card h3 {
+
+    color: var(--dark);
+
+    font-size: 21px;
+
+    line-height: 1.3;
+
+    margin-bottom: 12px;
+}
+
+.course-card h3 span {
+
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+.course-card p {
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   HEALTHCARE AREAS
+===================================================== */
+
+.area-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 20px;
+}
+
+.area-card {
+
+    background: #fff;
+
+    padding: 30px 20px;
+
+    border-radius: 17px;
+
+    text-align: center;
+
+    border: 1px solid #e7e7e7;
+
+    transition: .3s;
+}
+
+.area-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,.08);
+}
+
+.area-card i {
+
+    font-size: 40px;
+
+    color: var(--primary);
+
+    margin-bottom: 10px;
+}
+
+.area-card h3 {
+
+    color: var(--dark);
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.area-card p {
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 20px;
+}
+
+.skill-card {
+
+    background: #fff9eb;
+
+    border-left: 5px solid var(--gold);
+
+    padding: 25px;
+
+    border-radius: 15px;
+}
+
+.skill-card h3 {
+
+    color: var(--dark);
+
+    font-size: 20px;
+
+    margin-bottom: 7px;
+}
+
+.skill-card p {
+
+    color: var(--text);
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   CAREER
+===================================================== */
+
+.career-section {
+
+    background: #35282f;
+
+    color: #fff;
+
+    padding: 80px 0;
+}
+
+.career-section .section-heading h2 {
+
+    color: #fff;
+}
+
+.career-section .section-heading p {
+
+    color: #ddd;
+}
+
+.career-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.career-card {
+
+    padding: 27px;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.career-card:hover {
+
+    background: rgba(255,255,255,.07);
+
+    transform: translateY(-5px);
+}
+
+.career-card i {
+
+    font-size: 38px;
+
+    color: #e5a2c2;
+
+    margin-bottom: 10px;
+}
+
+.career-card h3 {
+
+    font-size: 18px;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   COURSE BENEFITS
+===================================================== */
+
+.benefit-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.benefit-card {
+
+    padding: 30px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.06);
+
+    text-align: center;
+}
+
+.benefit-card i {
+
+    font-size: 40px;
+
+    color: var(--primary);
+
+    margin-bottom: 12px;
+}
+
+.benefit-card h3 {
+
+    color: var(--dark);
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.benefit-card p {
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta {
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #bd4d88,
+            #913463
+        );
+}
+
+.cta h2 {
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+.cta p {
+
+    max-width: 750px;
+
+    margin: 0 auto 25px;
+
+    color: #ffe9f3;
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq-container {
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.faq {
+
+    background: #fff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 12px;
+
+    margin-bottom: 14px;
+
+    overflow: hidden;
+}
+
+.faq-question {
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-weight: bold;
+
+    color: var(--dark);
+
+    cursor: pointer;
+}
+
+.faq-question i {
+
+    font-size: 22px;
+
+    transition: .3s;
+}
+
+.faq-answer {
+
+    display: none;
+
+    padding: 0 20px 20px;
+
+    color: var(--text);
+}
+
+.faq.active .faq-answer {
+
+    display: block;
+}
+
+.faq.active .faq-question i {
+
+    transform: rotate(45deg);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    background: #272127;
+
+    color: #fff;
+
+    padding: 45px 30px 20px;
+}
+
+footer img {
+
+    max-width: 230px;
+
+    height: auto;
+}
+
+footer ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+footer ul li {
+
+    margin-bottom: 8px;
+}
+
+footer a {
+
+    color: #ddd;
+
+    transition: .3s;
+}
+
+footer a:hover {
+
+    color: #e49abb;
+}
+
+footer p {
+
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,.15);
+
+    color: #bbb;
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition: .8s ease;
+}
+
+.reveal.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width: 991px) {
+
+    .nav {
+        padding: 0 20px;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
+    .nav__menu {
+
+        position: absolute;
+
+        top: 80px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: #fff;
+
+        display: none;
+
+        max-height: calc(100vh - 80px);
+
+        overflow-y: auto;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    }
+
+    .nav__menu.show-menu {
+        display: block;
+    }
+
+    .nav__list {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .nav__link {
+
+        padding: 14px 25px;
+
+        justify-content: space-between;
+    }
+
+    .dropdown__menu {
+
+        position: static;
+
+        width: 100%;
+
+        min-width: auto;
+
+        display: none;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+        background: #fafafa;
+    }
+
+    .dropdown__item.active .dropdown__menu {
+        display: block;
+    }
+
+    .dropdown__item:hover .dropdown__menu {
+        display: none;
+    }
+
+    .dropdown__item.active:hover .dropdown__menu {
+        display: block;
+    }
+
+    .dropdown__link {
+        padding-left: 45px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .area-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .career-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .benefit-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .quick-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .about-content h2 {
+        font-size: 30px;
+    }
+
+    .about-image img {
+        height: 320px;
+    }
+
+    .course-grid,
+    .area-grid,
+    .skills-grid,
+    .career-grid,
+    .benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    footer .col-md-4 {
+        margin-bottom: 25px;
+    }
+}
+
+</style>
+
+</head>
+
+<head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,824 +1253,14 @@
 
 
 </head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hospital Management Course</title>
-
-<meta name="description"
-content="Hospital Management course covering healthcare administration, hospital operations, patient services, medical records, healthcare management and hospital administration.">
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #263238;
-    background: #fff;
-    line-height: 1.7;
-}
-
-:root {
-    --primary: #b94b86;
-    --primary-dark: #8f3265;
-    --blue: #1479a8;
-    --dark-blue: #123b57;
-    --light-blue: #eef8fb;
-    --light: #f7f9fb;
-    --text: #5d6673;
-}
-
-
-/* =========================================
-   HERO
-========================================= */
-
-.hospital-hero {
-    position: relative;
-    min-height: 560px;
-
-    display: flex;
-    align-items: center;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(8, 38, 58, 0.96),
-            rgba(8, 38, 58, 0.82),
-            rgba(8, 38, 58, 0.30)
-        ),
-        url("hospital-management.jpg");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.hospital-hero-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-
-    color: white;
-}
-
-.hero-tag {
-    display: inline-block;
-
-    padding: 8px 18px;
-
-    border: 1px solid rgba(255,255,255,.4);
-
-    border-radius: 30px;
-
-    font-size: 14px;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 18px;
-}
-
-.hospital-hero h1 {
-    font-size: clamp(42px, 6vw, 72px);
-
-    line-height: 1.05;
-
-    max-width: 800px;
-
-    margin-bottom: 20px;
-}
-
-.hospital-hero h1 span {
-    color: #ff91c5;
-}
-
-.hospital-hero p {
-    max-width: 720px;
-
-    font-size: 18px;
-
-    color: #edf5fc;
-
-    margin-bottom: 28px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.hero-btn {
-    display: inline-block;
-
-    padding: 13px 26px;
-
-    border-radius: 30px;
-
-    font-weight: bold;
-
-    text-decoration: none;
-
-    transition: .3s;
-}
-
-.hero-btn.primary {
-    background: var(--primary);
-    color: white;
-}
-
-.hero-btn.primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-}
-
-.hero-btn.white {
-    background: white;
-    color: var(--dark-blue);
-}
-
-.hero-btn.white:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =========================================
-   QUICK INFORMATION
-========================================= */
-
-.hospital-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.quick-info {
-    margin-top: -45px;
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.quick-grid {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    background: white;
-
-    border-radius: 18px;
-
-    box-shadow: 0 15px 45px rgba(0,0,0,.12);
-
-    overflow: hidden;
-}
-
-.quick-box {
-    text-align: center;
-
-    padding: 25px 15px;
-
-    border-right: 1px solid #eee;
-}
-
-.quick-box:last-child {
-    border-right: none;
-}
-
-.quick-icon {
-    font-size: 32px;
-
-    margin-bottom: 5px;
-}
-
-.quick-box h3 {
-    font-size: 17px;
-
-    color: var(--dark-blue);
-}
-
-.quick-box p {
-    color: var(--text);
-
-    font-size: 14px;
-}
-
-
-/* =========================================
-   GENERAL SECTION
-========================================= */
-
-.hospital-section {
-    padding: 80px 0;
-}
-
-.hospital-section.light {
-    background: var(--light);
-}
-
-.section-heading {
-    text-align: center;
-
-    max-width: 800px;
-
-    margin: 0 auto 50px;
-}
-
-.section-heading small {
-    color: var(--primary);
-
-    font-weight: bold;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
-}
-
-.section-heading h2 {
-    font-size: 38px;
-
-    color: var(--dark-blue);
-
-    margin: 8px 0 12px;
-}
-
-.section-heading p {
-    color: var(--text);
-}
-
-
-/* =========================================
-   INTRODUCTION
-========================================= */
-
-.hospital-intro {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 55px;
-
-    align-items: center;
-}
-
-.hospital-intro-image {
-    border-radius: 24px;
-
-    overflow: hidden;
-
-    box-shadow: 0 20px 45px rgba(0,0,0,.14);
-}
-
-.hospital-intro-image img {
-    width: 100%;
-
-    height: 430px;
-
-    object-fit: cover;
-}
-
-.hospital-intro-content h2 {
-    font-size: 38px;
-
-    color: var(--dark-blue);
-
-    line-height: 1.2;
-
-    margin-bottom: 18px;
-}
-
-.hospital-intro-content h2 span {
-    color: var(--primary);
-}
-
-.hospital-intro-content p {
-    color: var(--text);
-
-    margin-bottom: 16px;
-}
-
-.check-list {
-    list-style: none;
-
-    margin-top: 20px;
-}
-
-.check-list li {
-    margin: 11px 0;
-
-    color: var(--dark-blue);
-
-    font-weight: 600;
-}
-
-.check-list li::before {
-    content: "✓";
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 25px;
-
-    height: 25px;
-
-    background: #f7dbe9;
-
-    color: var(--primary);
-
-    border-radius: 50%;
-
-    margin-right: 10px;
-}
-
-
-/* =========================================
-   COURSE MODULES
-========================================= */
-
-.module-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.module-card {
-    position: relative;
-
-    background: white;
-
-    border: 1px solid #e6e9ef;
-
-    border-radius: 20px;
-
-    padding: 30px;
-
-    transition: .35s;
-
-    overflow: hidden;
-}
-
-.module-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow: 0 18px 40px rgba(0,0,0,.10);
-
-    border-color: #df9fc1;
-}
-
-.module-number {
-    position: absolute;
-
-    top: 10px;
-
-    right: 18px;
-
-    font-size: 45px;
-
-    font-weight: 900;
-
-    color: #f4e2eb;
-}
-
-.module-icon {
-    width: 60px;
-
-    height: 60px;
-
-    border-radius: 16px;
-
-    background: #f8e2ed;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 28px;
-
-    margin-bottom: 18px;
-}
-
-.module-card h3 {
-    color: var(--dark-blue);
-
-    font-size: 21px;
-
-    margin-bottom: 10px;
-}
-
-.module-card p {
-    color: var(--text);
-
-    font-size: 15px;
-}
-
-
-/* =========================================
-   HIGHLIGHTS
-========================================= */
-
-.highlight-section {
-    background: var(--dark-blue);
-
-    padding: 65px 0;
-
-    color: white;
-}
-
-.highlight-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 30px;
-
-    text-align: center;
-}
-
-.highlight-item h3 {
-    font-size: 24px;
-
-    margin-bottom: 8px;
-}
-
-.highlight-item p {
-    color: #cbd9e7;
-}
-
-
-/* =========================================
-   SKILLS
-========================================= */
-
-.skill-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-}
-
-.skill-card {
-    padding: 25px;
-
-    background: var(--light-blue);
-
-    border-radius: 15px;
-
-    border-left: 5px solid var(--blue);
-}
-
-.skill-card h3 {
-    color: var(--dark-blue);
-
-    margin-bottom: 7px;
-}
-
-.skill-card p {
-    color: var(--text);
-}
-
-
-/* =========================================
-   CAREER OPTIONS
-========================================= */
-
-.career-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.career-card {
-    background: white;
-
-    border: 1px solid #e5e8ee;
-
-    padding: 28px 20px;
-
-    text-align: center;
-
-    border-radius: 18px;
-
-    transition: .3s;
-}
-
-.career-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 15px 35px rgba(0,0,0,.08);
-}
-
-.career-icon {
-    font-size: 40px;
-
-    margin-bottom: 10px;
-}
-
-.career-card h3 {
-    color: var(--dark-blue);
-
-    font-size: 18px;
-}
-
-
-/* =========================================
-   COURSE DETAILS
-========================================= */
-
-.details-grid {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.detail-box {
-    background: white;
-
-    padding: 28px 20px;
-
-    border-radius: 16px;
-
-    text-align: center;
-
-    box-shadow: 0 8px 30px rgba(0,0,0,.06);
-}
-
-.detail-box .icon {
-    font-size: 32px;
-
-    margin-bottom: 8px;
-}
-
-.detail-box h3 {
-    color: var(--dark-blue);
-
-    font-size: 18px;
-
-    margin-bottom: 5px;
-}
-
-.detail-box p {
-    color: var(--text);
-
-    font-size: 14px;
-}
-
-
-/* =========================================
-   CTA
-========================================= */
-
-.hospital-cta {
-    background:
-        linear-gradient(
-            135deg,
-            #b94b86,
-            #8d3264
-        );
-
-    color: white;
-
-    text-align: center;
-
-    padding: 75px 20px;
-}
-
-.hospital-cta h2 {
-    font-size: 42px;
-
-    margin-bottom: 12px;
-}
-
-.hospital-cta p {
-    max-width: 750px;
-
-    margin: 0 auto 25px;
-
-    color: #ffeaf5;
-}
-
-.cta-button {
-    display: inline-block;
-
-    padding: 14px 30px;
-
-    background: white;
-
-    color: var(--primary);
-
-    border-radius: 30px;
-
-    font-weight: bold;
-
-    text-decoration: none;
-
-    transition: .3s;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =========================================
-   FAQ
-========================================= */
-
-.faq-container {
-    max-width: 850px;
-
-    margin: auto;
-}
-
-.faq {
-    margin-bottom: 14px;
-
-    border: 1px solid #e4e7eb;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 19px 20px;
-
-    cursor: pointer;
-
-    background: white;
-
-    color: var(--dark-blue);
-
-    font-weight: bold;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-}
-
-.faq-answer {
-    display: none;
-
-    padding: 0 20px 20px;
-
-    color: var(--text);
-
-    background: white;
-}
-
-.faq.active .faq-answer {
-    display: block;
-}
-
-.faq.active .faq-plus {
-    transform: rotate(45deg);
-}
-
-.faq-plus {
-    font-size: 24px;
-
-    transition: .3s;
-}
-
-
-/* =========================================
-   ANIMATION
-========================================= */
-
-.reveal {
-    opacity: 0;
-
-    transform: translateY(25px);
-
-    transition: .8s ease;
-}
-
-.reveal.show {
-    opacity: 1;
-
-    transform: translateY(0);
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media(max-width: 950px) {
-
-    .quick-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .quick-box:nth-child(2) {
-        border-right: none;
-    }
-
-    .hospital-intro {
-        grid-template-columns: 1fr;
-    }
-
-    .module-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .career-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .details-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-@media(max-width: 600px) {
-
-    .hospital-section {
-        padding: 55px 0;
-    }
-
-    .hospital-hero {
-        min-height: 620px;
-    }
-
-    .hospital-hero h1 {
-        font-size: 42px;
-    }
-
-    .hospital-hero p {
-        font-size: 16px;
-    }
-
-    .quick-info {
-        margin-top: -25px;
-    }
-
-    .quick-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .quick-box {
-        padding: 20px 8px;
-    }
-
-    .hospital-intro-content h2,
-    .section-heading h2 {
-        font-size: 30px;
-    }
-
-    .hospital-intro-image img {
-        height: 320px;
-    }
-
-    .module-grid,
-    .skill-grid,
-    .career-grid,
-    .details-grid,
-    .highlight-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hospital-cta h2 {
-        font-size: 30px;
-    }
-}
-
-</style>
-</head>
-
-
 <body>
 
-        <header class="header">
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+   <header class="header">
       <nav class="nav container">
          <div class="nav__data">
             <a href="/maria/index.html" class="nav__logo">
@@ -1016,41 +1432,57 @@ body {
       </nav>
    </header>
 
-<!-- =========================================
+
+
+<!-- =====================================================
      HERO
-========================================= -->
+===================================================== -->
 
-<section class="hospital-hero">
+<section class="hero">
 
-    <div class="hospital-hero-content">
+    <div class="hero-content">
 
-        <div class="hero-tag">
-            🏥 HEALTHCARE & MANAGEMENT EDUCATION
+        <div class="hero-label">
+
+            🏥 PARAMEDICAL & HEALTHCARE EDUCATION
+
         </div>
 
+
         <h1>
+
             Hospital
+
             <span>Management</span>
+
         </h1>
 
+
         <p>
-            Build your career in healthcare administration with
-            professional knowledge of hospital operations,
-            patient services, healthcare administration,
-            medical records, quality management and hospital
-            support services.
+
+            Explore professional healthcare and paramedical
+            education designed to develop knowledge, practical
+            skills and confidence for careers in the healthcare
+            and medical support sector.
+
         </p>
+
 
         <div class="hero-buttons">
 
-            <a href="#course-modules"
-               class="hero-btn primary">
-                Explore Course
+            <a href="#paramedical"
+               class="btn-main">
+
+                Explore Courses
+
             </a>
 
-            <a href="#career"
-               class="hero-btn white">
-                Career Opportunities
+
+            <a href="../top_tre/admission.html"
+               class="btn-light">
+
+                Apply for Admission
+
             </a>
 
         </div>
@@ -1060,123 +1492,170 @@ body {
 </section>
 
 
-<!-- =========================================
-     QUICK INFORMATION
-========================================= -->
 
-<div class="hospital-container quick-info">
+<!-- =====================================================
+     QUICK INFORMATION
+===================================================== -->
+
+<div class="container quick-section">
 
     <div class="quick-grid">
 
-        <div class="quick-box">
 
-            <div class="quick-icon">🏥</div>
+        <div class="quick-card">
 
-            <h3>Healthcare</h3>
+            <i class="ri-microscope-line"></i>
 
-            <p>Healthcare administration</p>
+            <h3>
+                Medical Laboratory
+            </h3>
 
-        </div>
-
-
-        <div class="quick-box">
-
-            <div class="quick-icon">📋</div>
-
-            <h3>Administration</h3>
-
-            <p>Hospital operations</p>
+            <p>
+                DMLT
+            </p>
 
         </div>
 
 
-        <div class="quick-box">
+        <div class="quick-card">
 
-            <div class="quick-icon">👨‍⚕️</div>
+            <i class="ri-hospital-line"></i>
 
-            <h3>Patient Services</h3>
+            <h3>
+                Operation Theatre
+            </h3>
 
-            <p>Patient care coordination</p>
+            <p>
+                Technology
+            </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+            <i class="ri-scan-line"></i>
+
+            <h3>
+                Radiology
+            </h3>
+
+            <p>
+                Imaging Technology
+            </p>
 
         </div>
 
 
-        <div class="quick-box">
+        <div class="quick-card">
 
-            <div class="quick-icon">💼</div>
+            <i class="ri-heart-pulse-line"></i>
 
-            <h3>Career Focused</h3>
+            <h3>
+                Patient Care
+            </h3>
 
-            <p>Professional development</p>
+            <p>
+                Nursing Assistant
+            </p>
 
         </div>
+
 
     </div>
 
 </div>
 
 
-<!-- =========================================
-     INTRODUCTION
-========================================= -->
 
-<section class="hospital-section">
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-    <div class="hospital-container">
+<section class="section">
 
-        <div class="hospital-intro">
+    <div class="container">
+
+        <div class="about-grid">
 
 
-            <div class="hospital-intro-image reveal">
+            <div class="about-image reveal">
 
-                <img src="../../assets/images/HOSPITAL-MANAGEMENT.png"
-                     alt="Hospital Management Training">
+                <img
+                    src="../images/HOSPITAL-MANAGEMENT.png"
+                    alt="Hospital Management">
 
             </div>
 
 
-            <div class="hospital-intro-content reveal">
+            <div class="about-content reveal">
 
                 <h2>
-                    Build Your Career in
-                    <span>Hospital Management</span>
+
+                    Build Your Future in
+
+                    <span>
+                        Healthcare
+                    </span>
+
                 </h2>
 
-                <p>
-                    Hospital Management focuses on the effective
-                    administration and coordination of healthcare
-                    facilities and their support services.
-                </p>
 
                 <p>
-                    The course introduces students to hospital
-                    administration, patient services, medical
-                    records, healthcare operations, quality
-                    management and the coordination of different
-                    hospital departments.
+
+                    The healthcare sector provides a wide range
+                    of opportunities for students interested in
+                    medical support, patient care, laboratory
+                    services, imaging and hospital operations.
+
                 </p>
 
+
                 <p>
-                    Students can develop communication, leadership,
-                    organizational and administrative skills that
-                    can support careers in hospitals, clinics,
-                    diagnostic centres and healthcare organizations.
+
+                    Our paramedical-focused courses introduce
+                    learners to important healthcare concepts
+                    and practical professional skills required
+                    in different medical environments.
+
+                </p>
+
+
+                <p>
+
+                    Students can develop communication,
+                    teamwork, patient-care and technical skills
+                    while gaining an understanding of healthcare
+                    workplace practices.
+
                 </p>
 
 
                 <ul class="check-list">
 
-                    <li>Hospital Administration</li>
+                    <li>
+                        Healthcare & Hospital Environment
+                    </li>
 
-                    <li>Patient Service Management</li>
+                    <li>
+                        Patient Care & Assistance
+                    </li>
 
-                    <li>Medical Records Management</li>
+                    <li>
+                        Medical Laboratory Practices
+                    </li>
 
-                    <li>Healthcare Operations</li>
+                    <li>
+                        Operation Theatre Support
+                    </li>
 
-                    <li>Hospital Quality Management</li>
+                    <li>
+                        Radiology & Imaging Fundamentals
+                    </li>
 
-                    <li>Healthcare Communication</li>
+                    <li>
+                        Professional Healthcare Skills
+                    </li>
 
                 </ul>
 
@@ -1189,245 +1668,339 @@ body {
 </section>
 
 
-<!-- =========================================
-     COURSE MODULES
-========================================= -->
 
-<section class="hospital-section light"
-         id="course-modules">
+<!-- =====================================================
+     PARAMEDICAL COURSES
+===================================================== -->
 
-    <div class="hospital-container">
+<section class="section section-light"
+         id="paramedical">
+
+    <div class="container">
 
         <div class="section-heading reveal">
 
-            <small>COURSE CONTENT</small>
+            <small>
+                PARAMEDICAL COURSES
+            </small>
 
             <h2>
-                Explore Hospital Management Modules
+                Explore Our Healthcare Courses
             </h2>
 
             <p>
-                Develop a strong understanding of the major
-                areas involved in hospital administration
-                and healthcare management.
+
+                Develop healthcare knowledge and professional
+                skills through our range of paramedical and
+                patient-care focused courses.
+
             </p>
 
         </div>
 
 
-        <div class="module-grid">
+        <div class="course-grid">
 
 
-            <!-- 01 -->
+            <!-- DMLT -->
 
-            <div class="module-card reveal">
+            <div class="course-card reveal">
 
-                <div class="module-number">
+                <div class="course-number">
                     01
                 </div>
 
-                <div class="module-icon">
+                <div class="course-icon">
+                    🧪
+                </div>
+
+                <h3>
+
+                    Medical Laboratory
+                    Technology
+
+                    <span>
+                        DMLT
+                    </span>
+
+                </h3>
+
+                <p>
+
+                    Learn the fundamentals of medical laboratory
+                    procedures, sample collection, basic
+                    diagnostic testing, laboratory safety and
+                    professional laboratory practices.
+
+                </p>
+
+            </div>
+
+
+            <!-- OTT -->
+
+            <div class="course-card reveal">
+
+                <div class="course-number">
+                    02
+                </div>
+
+                <div class="course-icon">
                     🏥
                 </div>
 
                 <h3>
-                    Hospital Administration
+
+                    Operation Theatre
+                    Technology
+
+                    <span>
+                        OTT
+                    </span>
+
                 </h3>
 
                 <p>
-                    Understand hospital structures, departments,
-                    administration procedures, planning,
-                    coordination and day-to-day operations.
+
+                    Understand operation theatre procedures,
+                    equipment, sterilization practices, patient
+                    preparation and support activities associated
+                    with surgical environments.
+
                 </p>
 
             </div>
 
 
-            <!-- 02 -->
+            <!-- RADIOLOGY -->
 
-            <div class="module-card reveal">
+            <div class="course-card reveal">
 
-                <div class="module-number">
-                    02
-                </div>
-
-                <div class="module-icon">
-                    👨‍⚕️
-                </div>
-
-                <h3>
-                    Patient Care Management
-                </h3>
-
-                <p>
-                    Learn the fundamentals of patient services,
-                    registration, admission, discharge and
-                    coordination between hospital departments.
-                </p>
-
-            </div>
-
-
-            <!-- 03 -->
-
-            <div class="module-card reveal">
-
-                <div class="module-number">
+                <div class="course-number">
                     03
                 </div>
 
-                <div class="module-icon">
-                    📋
+                <div class="course-icon">
+                    🩻
                 </div>
 
                 <h3>
-                    Medical Records Management
+
+                    Radiology & Imaging
+                    Technology
+
                 </h3>
 
                 <p>
-                    Understand the importance of medical records,
-                    documentation, patient information management
-                    and healthcare data handling.
+
+                    Gain an introduction to medical imaging,
+                    radiology procedures, patient positioning,
+                    imaging equipment and essential safety
+                    practices.
+
                 </p>
 
             </div>
 
 
-            <!-- 04 -->
+            <!-- PATIENT CARE -->
 
-            <div class="module-card reveal">
+            <div class="course-card reveal">
 
-                <div class="module-number">
+                <div class="course-number">
                     04
                 </div>
 
-                <div class="module-icon">
-                    💊
+                <div class="course-icon">
+                    👩‍⚕️
                 </div>
+
+                <h3>
+
+                    Patient Care
+
+                    <span>
+                        Nursing Assistant
+                    </span>
+
+                </h3>
+
+                <p>
+
+                    Develop essential patient-care skills
+                    including basic nursing assistance, hygiene,
+                    patient support, communication and healthcare
+                    assistance.
+
+                </p>
+
+            </div>
+
+
+            <!-- MORE -->
+
+            <div class="course-card reveal">
+
+                <div class="course-number">
+                    05
+                </div>
+
+                <div class="course-icon">
+                    ➕
+                </div>
+
+                <h3>
+
+                    More Paramedical
+                    Courses
+
+                </h3>
+
+                <p>
+
+                    Explore additional healthcare and paramedical
+                    programs designed to develop practical
+                    knowledge and professional skills for
+                    healthcare support roles.
+
+                </p>
+
+            </div>
+
+
+            <!-- HEALTHCARE SKILLS -->
+
+            <div class="course-card reveal">
+
+                <div class="course-number">
+                    06
+                </div>
+
+                <div class="course-icon">
+                    ❤️
+                </div>
+
+                <h3>
+
+                    Healthcare
+                    Professional Skills
+
+                </h3>
+
+                <p>
+
+                    Build communication, patient-care, teamwork,
+                    professional ethics and workplace skills
+                    required in healthcare environments.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HEALTHCARE AREAS
+===================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <small>
+                HEALTHCARE EDUCATION
+            </small>
+
+            <h2>
+                Key Areas of Learning
+            </h2>
+
+            <p>
+
+                Gain exposure to important areas of healthcare
+                and hospital support services.
+
+            </p>
+
+        </div>
+
+
+        <div class="area-grid">
+
+
+            <div class="area-card reveal">
+
+                <i class="ri-microscope-line"></i>
+
+                <h3>
+                    Laboratory
+                </h3>
+
+                <p>
+                    Introduction to laboratory procedures
+                    and diagnostic support.
+                </p>
+
+            </div>
+
+
+            <div class="area-card reveal">
+
+                <i class="ri-hospital-line"></i>
 
                 <h3>
                     Hospital Operations
                 </h3>
 
                 <p>
-                    Learn about hospital workflows, support
-                    services, resource coordination and
-                    operational management.
-                </p>
-
-            </div>
-
-
-            <!-- 05 -->
-
-            <div class="module-card reveal">
-
-                <div class="module-number">
-                    05
-                </div>
-
-                <div class="module-icon">
-                    🛡️
-                </div>
-
-                <h3>
-                    Quality & Safety Management
-                </h3>
-
-                <p>
-                    Understand healthcare quality, patient safety,
-                    hygiene, risk awareness and service
-                    improvement practices.
-                </p>
-
-            </div>
-
-
-            <!-- 06 -->
-
-            <div class="module-card reveal">
-
-                <div class="module-number">
-                    06
-                </div>
-
-                <div class="module-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Healthcare Management
-                </h3>
-
-                <p>
-                    Develop knowledge of healthcare planning,
-                    staff coordination, budgeting concepts and
-                    organizational management.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     HIGHLIGHTS
-========================================= -->
-
-<section class="highlight-section">
-
-    <div class="hospital-container">
-
-        <div class="highlight-grid">
-
-
-            <div class="highlight-item reveal">
-
-                <h3>
-                    Hospital Administration
-                </h3>
-
-                <p>
-                    Understand the management and coordination
-                    of hospital departments and services.
-                </p>
-
-            </div>
-
-
-            <div class="highlight-item reveal">
-
-                <h3>
-                    Patient Services
-                </h3>
-
-                <p>
-                    Develop professional skills for effective
-                    patient interaction and service coordination.
-                </p>
-
-            </div>
-
-
-            <div class="highlight-item reveal">
-
-                <h3>
-                    Healthcare Operations
-                </h3>
-
-                <p>
-                    Learn the fundamentals of managing healthcare
+                    Understand hospital departments,
                     workflows and support services.
                 </p>
 
             </div>
 
 
+            <div class="area-card reveal">
+
+                <i class="ri-scan-line"></i>
+
+                <h3>
+                    Medical Imaging
+                </h3>
+
+                <p>
+                    Introduction to radiology and
+                    medical imaging practices.
+                </p>
+
+            </div>
+
+
+            <div class="area-card reveal">
+
+                <i class="ri-heart-pulse-line"></i>
+
+                <h3>
+                    Patient Care
+                </h3>
+
+                <p>
+                    Learn fundamental patient assistance
+                    and care practices.
+                </p>
+
+            </div>
+
+
         </div>
 
     </div>
@@ -1435,13 +2008,14 @@ body {
 </section>
 
 
-<!-- =========================================
+
+<!-- =====================================================
      SKILLS
-========================================= -->
+===================================================== -->
 
-<section class="hospital-section">
+<section class="section section-light">
 
-    <div class="hospital-container">
+    <div class="container">
 
         <div class="section-heading reveal">
 
@@ -1450,30 +2024,34 @@ body {
             </small>
 
             <h2>
-                Skills You Can Develop
+                Professional Healthcare Skills
             </h2>
 
             <p>
-                Develop professional skills required for
-                modern healthcare administration.
+
+                Develop essential skills that support professional
+                performance in healthcare environments.
+
             </p>
 
         </div>
 
 
-        <div class="skill-grid">
+        <div class="skills-grid">
 
 
             <div class="skill-card reveal">
 
                 <h3>
-                    Healthcare Communication
+                    Patient Communication
                 </h3>
 
                 <p>
-                    Improve professional communication with
-                    patients, healthcare professionals and
-                    administrative teams.
+
+                    Develop professional communication skills
+                    when interacting with patients, families
+                    and healthcare teams.
+
                 </p>
 
             </div>
@@ -1482,12 +2060,14 @@ body {
             <div class="skill-card reveal">
 
                 <h3>
-                    Hospital Administration
+                    Patient Care
                 </h3>
 
                 <p>
-                    Understand administrative processes and
-                    coordination within healthcare facilities.
+
+                    Understand basic patient-support practices,
+                    hygiene, comfort and assistance.
+
                 </p>
 
             </div>
@@ -1496,12 +2076,14 @@ body {
             <div class="skill-card reveal">
 
                 <h3>
-                    Patient Relationship Management
+                    Teamwork
                 </h3>
 
                 <p>
-                    Learn professional approaches for patient
-                    interaction, support and service management.
+
+                    Learn how healthcare professionals work
+                    together to provide coordinated services.
+
                 </p>
 
             </div>
@@ -1510,12 +2092,14 @@ body {
             <div class="skill-card reveal">
 
                 <h3>
-                    Team Coordination
+                    Professional Ethics
                 </h3>
 
                 <p>
-                    Develop teamwork and coordination skills
-                    required across different hospital departments.
+
+                    Understand the importance of professional
+                    behaviour, responsibility and confidentiality.
+
                 </p>
 
             </div>
@@ -1524,12 +2108,14 @@ body {
             <div class="skill-card reveal">
 
                 <h3>
-                    Documentation Skills
+                    Safety Awareness
                 </h3>
 
                 <p>
-                    Understand healthcare documentation,
-                    records and administrative information.
+
+                    Develop awareness of workplace safety,
+                    hygiene and healthcare environment practices.
+
                 </p>
 
             </div>
@@ -1538,12 +2124,14 @@ body {
             <div class="skill-card reveal">
 
                 <h3>
-                    Problem Solving
+                    Workplace Discipline
                 </h3>
 
                 <p>
-                    Develop organized approaches to handling
-                    administrative and service-related situations.
+
+                    Build punctuality, responsibility,
+                    organization and professional behaviour.
+
                 </p>
 
             </div>
@@ -1556,14 +2144,15 @@ body {
 </section>
 
 
-<!-- =========================================
-     CAREER OPPORTUNITIES
-========================================= -->
 
-<section class="hospital-section light"
+<!-- =====================================================
+     CAREER OPPORTUNITIES
+===================================================== -->
+
+<section class="career-section"
          id="career">
 
-    <div class="hospital-container">
+    <div class="container">
 
         <div class="section-heading reveal">
 
@@ -1572,13 +2161,15 @@ body {
             </small>
 
             <h2>
-                Explore Your Career Options
+                Explore Healthcare Career Paths
             </h2>
 
             <p>
+
                 Depending on qualifications, skills and employer
-                requirements, healthcare management careers may
-                include:
+                requirements, students may explore opportunities
+                in different healthcare support areas.
+
             </p>
 
         </div>
@@ -1589,12 +2180,10 @@ body {
 
             <div class="career-card reveal">
 
-                <div class="career-icon">
-                    🏥
-                </div>
+                <i class="ri-microscope-line"></i>
 
                 <h3>
-                    Hospital Administrator
+                    Laboratory Assistant
                 </h3>
 
             </div>
@@ -1602,12 +2191,10 @@ body {
 
             <div class="career-card reveal">
 
-                <div class="career-icon">
-                    📋
-                </div>
+                <i class="ri-hospital-line"></i>
 
                 <h3>
-                    Hospital Executive
+                    Operation Theatre Assistant
                 </h3>
 
             </div>
@@ -1615,12 +2202,10 @@ body {
 
             <div class="career-card reveal">
 
-                <div class="career-icon">
-                    👨‍⚕️
-                </div>
+                <i class="ri-scan-line"></i>
 
                 <h3>
-                    Patient Care Coordinator
+                    Imaging Assistant
                 </h3>
 
             </div>
@@ -1628,12 +2213,10 @@ body {
 
             <div class="career-card reveal">
 
-                <div class="career-icon">
-                    💻
-                </div>
+                <i class="ri-heart-pulse-line"></i>
 
                 <h3>
-                    Medical Records Executive
+                    Patient Care Assistant
                 </h3>
 
             </div>
@@ -1641,12 +2224,10 @@ body {
 
             <div class="career-card reveal">
 
-                <div class="career-icon">
-                    🧪
-                </div>
+                <i class="ri-user-heart-line"></i>
 
                 <h3>
-                    Diagnostic Centre Executive
+                    Nursing Assistant
                 </h3>
 
             </div>
@@ -1654,51 +2235,10 @@ body {
 
             <div class="career-card reveal">
 
-                <div class="career-icon">
-                    📊
-                </div>
+                <i class="ri-hospital-line"></i>
 
                 <h3>
-                    Healthcare Operations Executive
-                </h3>
-
-            </div>
-
-
-            <div class="career-card reveal">
-
-                <div class="career-icon">
-                    🛡️
-                </div>
-
-                <h3>
-                    Quality Management Executive
-                </h3>
-
-            </div>
-
-
-            <div class="career-card reveal">
-
-                <div class="career-icon">
-                    💼
-                </div>
-
-                <h3>
-                    Healthcare Administrative Assistant
-                </h3>
-
-            </div>
-
-
-            <div class="career-card reveal">
-
-                <div class="career-icon">
-                    🏢
-                </div>
-
-                <h3>
-                    Clinic Administrator
+                    Hospital Support Services
                 </h3>
 
             </div>
@@ -1711,96 +2251,142 @@ body {
 </section>
 
 
-<!-- =========================================
-     COURSE DETAILS
-========================================= -->
 
-<section class="hospital-section">
+<!-- =====================================================
+     BENEFITS
+===================================================== -->
 
-    <div class="hospital-container">
+<section class="section">
+
+    <div class="container">
 
         <div class="section-heading reveal">
 
             <small>
-                COURSE INFORMATION
+                WHY HEALTHCARE EDUCATION?
             </small>
 
             <h2>
-                Hospital Management Course Details
+                Learn. Develop. Serve.
             </h2>
+
+            <p>
+
+                Healthcare education can help students build
+                professional knowledge and prepare for roles
+                supporting patients and healthcare organizations.
+
+            </p>
 
         </div>
 
 
-        <div class="details-grid">
+        <div class="benefit-grid">
 
 
-            <div class="detail-box reveal">
+            <div class="benefit-card reveal">
 
-                <div class="icon">
-                    🎓
-                </div>
+                <i class="ri-book-open-line"></i>
 
                 <h3>
-                    Eligibility
+                    Professional Knowledge
                 </h3>
 
                 <p>
-                    Eligibility depends on the
-                    selected program.
+
+                    Develop foundational knowledge of healthcare
+                    and paramedical services.
+
                 </p>
 
             </div>
 
 
-            <div class="detail-box reveal">
+            <div class="benefit-card reveal">
 
-                <div class="icon">
-                    📚
-                </div>
+                <i class="ri-tools-line"></i>
 
                 <h3>
-                    Course Type
+                    Practical Skills
                 </h3>
 
                 <p>
-                    Hospital & Healthcare Management
+
+                    Build practical awareness related to
+                    healthcare workplace activities.
+
                 </p>
 
             </div>
 
 
-            <div class="detail-box reveal">
+            <div class="benefit-card reveal">
 
-                <div class="icon">
-                    ⏳
-                </div>
+                <i class="ri-team-line"></i>
 
                 <h3>
-                    Duration
+                    Team Environment
                 </h3>
 
                 <p>
-                    Different duration options
-                    may be available.
+
+                    Understand teamwork and coordination within
+                    healthcare environments.
+
                 </p>
 
             </div>
 
 
-            <div class="detail-box reveal">
+            <div class="benefit-card reveal">
 
-                <div class="icon">
-                    🏆
-                </div>
+                <i class="ri-user-heart-line"></i>
 
                 <h3>
-                    Certification
+                    Patient Focus
                 </h3>
 
                 <p>
-                    Certification as applicable
-                    to the selected program.
+
+                    Develop a professional attitude towards
+                    patient support and care.
+
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card reveal">
+
+                <i class="ri-shield-check-line"></i>
+
+                <h3>
+                    Safety Awareness
+                </h3>
+
+                <p>
+
+                    Learn the importance of hygiene, safety
+                    and responsible workplace practices.
+
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card reveal">
+
+                <i class="ri-briefcase-line"></i>
+
+                <h3>
+                    Career Preparation
+                </h3>
+
+                <p>
+
+                    Develop skills that can support your future
+                    healthcare career journey.
+
                 </p>
 
             </div>
@@ -1813,29 +2399,31 @@ body {
 </section>
 
 
-<!-- =========================================
+
+<!-- =====================================================
      CTA
-========================================= -->
+===================================================== -->
 
-<section class="hospital-cta">
+<section class="cta">
 
-    <div class="hospital-container reveal">
+    <div class="container">
 
         <h2>
-            Start Your Healthcare Management Career
+            Start Your Healthcare Career
         </h2>
 
         <p>
-            Take the next step towards a professional career
-            in hospital administration and healthcare management.
-            Contact us to learn more about admissions, eligibility,
-            course duration and training options.
+
+            Explore our paramedical courses and take the next
+            step towards developing your healthcare knowledge
+            and professional skills.
+
         </p>
 
-        <a href="tel:+919999999999"
-           class="cta-button">
+        <a href="../top_tre/admission.html"
+           class="btn-light">
 
-            📞 Contact Us
+            Apply for Admission
 
         </a>
 
@@ -1844,22 +2432,23 @@ body {
 </section>
 
 
-<!-- =========================================
+
+<!-- =====================================================
      FAQ
-========================================= -->
+===================================================== -->
 
-<section class="hospital-section">
+<section class="section section-light">
 
-    <div class="hospital-container">
+    <div class="container">
 
         <div class="section-heading reveal">
 
             <small>
-                FAQ
+                FREQUENTLY ASKED QUESTIONS
             </small>
 
             <h2>
-                Frequently Asked Questions
+                Hospital Management & Paramedical Courses
             </h2>
 
         </div>
@@ -1872,20 +2461,19 @@ body {
 
                 <div class="faq-question">
 
-                    What is Hospital Management?
+                    What are Paramedical Courses?
 
-                    <span class="faq-plus">
-                        +
-                    </span>
+                    <i class="ri-add-line"></i>
 
                 </div>
 
                 <div class="faq-answer">
 
-                    Hospital Management focuses on the
-                    administration, coordination and operation
-                    of healthcare facilities and their support
-                    services.
+                    Paramedical courses focus on healthcare
+                    support services and can introduce students
+                    to areas such as medical laboratory technology,
+                    operation theatre technology, radiology,
+                    imaging and patient care.
 
                 </div>
 
@@ -1896,20 +2484,18 @@ body {
 
                 <div class="faq-question">
 
-                    What subjects are covered?
+                    What is DMLT?
 
-                    <span class="faq-plus">
-                        +
-                    </span>
+                    <i class="ri-add-line"></i>
 
                 </div>
 
                 <div class="faq-answer">
 
-                    The course may cover hospital administration,
-                    patient services, medical records, healthcare
-                    operations, quality management, communication
-                    and healthcare management.
+                    DMLT refers to Diploma in Medical Laboratory
+                    Technology. The program focuses on fundamental
+                    laboratory procedures and diagnostic support
+                    practices.
 
                 </div>
 
@@ -1920,69 +2506,63 @@ body {
 
                 <div class="faq-question">
 
-                    Where can Hospital Management students work?
+                    What is Operation Theatre Technology?
 
-                    <span class="faq-plus">
-                        +
-                    </span>
+                    <i class="ri-add-line"></i>
 
                 </div>
 
                 <div class="faq-answer">
 
-                    Depending on qualifications and employer
+                    Operation Theatre Technology introduces
+                    students to operation theatre procedures,
+                    equipment, sterilization, patient preparation
+                    and support activities.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq">
+
+                <div class="faq-question">
+
+                    What does Patient Care training cover?
+
+                    <i class="ri-add-line"></i>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    Patient Care or Nursing Assistant training
+                    can cover basic patient support, hygiene,
+                    communication, comfort and assistance within
+                    healthcare environments.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq">
+
+                <div class="faq-question">
+
+                    Where can students work after completing
+                    healthcare-related courses?
+
+                    <i class="ri-add-line"></i>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    Depending on the qualification and employer
                     requirements, opportunities may exist in
-                    hospitals, clinics, diagnostic centres,
-                    healthcare organizations and other healthcare
-                    support services.
-
-                </div>
-
-            </div>
-
-
-            <div class="faq">
-
-                <div class="faq-question">
-
-                    Is this course suitable for beginners?
-
-                    <span class="faq-plus">
-                        +
-                    </span>
-
-                </div>
-
-                <div class="faq-answer">
-
-                    Yes. The program can introduce students to
-                    fundamental healthcare administration and
-                    hospital operations before moving into
-                    specialized areas.
-
-                </div>
-
-            </div>
-
-
-            <div class="faq">
-
-                <div class="faq-question">
-
-                    What skills are important for Hospital Management?
-
-                    <span class="faq-plus">
-                        +
-                    </span>
-
-                </div>
-
-                <div class="faq-answer">
-
-                    Communication, organization, teamwork,
-                    problem solving, documentation, customer
-                    service and administrative skills are useful
-                    for healthcare management roles.
+                    hospitals, diagnostic centres, laboratories,
+                    clinics and other healthcare organizations.
 
                 </div>
 
@@ -1994,71 +2574,212 @@ body {
     </div>
 
 </section>
- <footer>
-      <div class="container-fluid">
-          <div class="row"> 
-              <div class="col-md-4">
-              <img src="../../assets/images/maria_logo.png" alt="">
-          </div>
-          <div class="col-md-4">
-              <ul class="text-center">
-                  <li><a href="./index.html">Home</a></li>
-                  <li><a href="">About</a></li>
-                  <li><a href="./assets/top_tre/contactus.html">Contact</a></li>
-                  <li><a href="./assets/top_tre/admission.html">Admission</a></li>
-  
-  
-              </ul>
-          </div>
-          <div class="col-md-4">
-             <div class="row">
-  
-             
-              <!-- <div class="col-md-4"> -->
-                  <a href=""><b>Mail:</b> info@mariamontessoriteachertraining.org</a>
-              <br><br>
-              <!-- <div class="col-md-4"> -->
-                  <a href=""><b>Phone:</b>+91-4651 215254,<br> +91-+91 99942 07721
-  
-                  </a>
-  
-              <!-- </div> -->
-          </div>
-          </div>
-  
-      </div>
-      <div class="row">
-          <p class="text-center">© Copyright  <span id="yearFooter">year</span> - Design By <a href="https://www.kumaritech.com/">KUMARI TECH</a></p>
-      </div>
-  
-  </footer>
 
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+
+            <div class="col-md-4">
+
+                <img
+                    src="../../assets/images/maria_logo.png"
+                    alt="Maria Montessori Teacher Training">
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <ul class="text-center">
+
+                    <li>
+
+                        <a href="./index.html">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="">
+                            About
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="./assets/top_tre/contactus.html">
+                            Contact
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="./assets/top_tre/admission.html">
+                            Admission
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <a href="mailto:info@mariamontessoriteachertraining.org">
+
+                    <b>Mail:</b>
+                    info@mariamontessoriteachertraining.org
+
+                </a>
+
+                <br><br>
+
+
+                <a href="tel:+919994207721">
+
+                    <b>Phone:</b>
+                    +91-4651 215254,
+                    <br>
+                    +91-99942 07721
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            <p class="text-center">
+
+                © Copyright
+
+                <span id="yearFooter">
+                    2026
+                </span>
+
+                - Design By
+
+                <a href="https://www.kumaritech.com/">
+
+                    KUMARI TECH
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-/* =========================================
-   FAQ
-========================================= */
 
-document.querySelectorAll(".faq-question").forEach(function(question) {
+/* MOBILE MENU */
 
-    question.addEventListener("click", function() {
+const navToggle =
+    document.getElementById("nav-toggle");
 
-        const faq = this.parentElement;
+const navMenu =
+    document.getElementById("nav-menu");
 
-        faq.classList.toggle("active");
+const burger =
+    document.querySelector(".nav__burger");
+
+const closeIcon =
+    document.querySelector(".nav__close");
+
+
+navToggle.addEventListener("click", function () {
+
+    navMenu.classList.toggle("show-menu");
+
+    if (navMenu.classList.contains("show-menu")) {
+
+        burger.style.display = "none";
+
+        closeIcon.style.display = "block";
+
+    } else {
+
+        burger.style.display = "block";
+
+        closeIcon.style.display = "none";
+
+    }
+
+});
+
+
+/* MOBILE DROPDOWN */
+
+document
+.querySelectorAll(".dropdown__item > .nav__link")
+.forEach(function(item) {
+
+    item.addEventListener("click", function(e) {
+
+        if (window.innerWidth <= 991) {
+
+            e.preventDefault();
+
+            this.parentElement.classList.toggle("active");
+
+        }
 
     });
 
 });
 
 
-/* =========================================
-   SCROLL ANIMATION
-========================================= */
+/* FAQ */
+
+document
+.querySelectorAll(".faq-question")
+.forEach(function(question) {
+
+    question.addEventListener("click", function() {
+
+        this.parentElement.classList.toggle("active");
+
+    });
+
+});
+
+
+/* SCROLL ANIMATION */
 
 const revealElements =
     document.querySelectorAll(".reveal");
+
 
 function revealOnScroll() {
 
@@ -2067,7 +2788,8 @@ function revealOnScroll() {
         const position =
             element.getBoundingClientRect().top;
 
-        if (position < window.innerHeight - 80) {
+        if (position <
+            window.innerHeight - 80) {
 
             element.classList.add("show");
 
@@ -2077,6 +2799,7 @@ function revealOnScroll() {
 
 }
 
+
 window.addEventListener(
     "scroll",
     revealOnScroll
@@ -2084,7 +2807,16 @@ window.addEventListener(
 
 revealOnScroll();
 
+
+/* FOOTER YEAR */
+
+document.getElementById("yearFooter").textContent =
+    new Date().getFullYear();
+
+
 </script>
 
+
 </body>
+
 </html>
